@@ -7,6 +7,7 @@ gem 'rails', '~> 5.2.4', '>= 5.2.4.1'
 gem 'sqlite3'
 gem 'puma', '~> 3.11'
 
+gem 'haml'
 gem 'sass-rails', '~> 5.0'
 gem 'coffee-rails', '~> 4.2'
 # Use Uglifier as compressor for JavaScript assets
