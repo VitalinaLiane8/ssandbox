@@ -9,6 +9,7 @@ git checkout -b Branch-name   # Switch to a new branch
 # Branch-name
 git remote add Branch-name https://github.com/AskanHolaAE17/AppName.git
 git push -u origin Branch-name
+
 git push heroku Branch-name:master
 ~git merge | git pull
 ~git push -u origin master
