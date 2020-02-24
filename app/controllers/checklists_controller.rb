@@ -17,20 +17,16 @@ class ChecklistsController < ApplicationController
   def create
     @checklist = Checklist.new(checklist_params)
 
-    respond_to do |format|
-      if @checklist.save
-        format.html { redirect_to @checklist, notice: 'Checklist was successfully created.' }
-      else
-        format.html { render :new }
-      end
-    end
+    if @checklist.save
+      redirect_to @checklist, notice: 'Checklist was successfully created.' 
+    else
+      render :new 
+    end    
   end
   
   def destroy
     @checklist.destroy
-    respond_to do |format|
-      format.html { redirect_to checklists_url, notice: 'Checklist was successfully destroyed.' }
-    end
+    redirect_to checklists_url, notice: 'Checklist was successfully destroyed.'
   end
     
   
