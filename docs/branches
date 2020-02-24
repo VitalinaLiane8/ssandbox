@@ -1,0 +1,16 @@
+# GIT BRANCHES
+bundle
+DEPLOY before new Branch creating | ~$ git pull
+
+git checkout -b Branch-name   # Switch to a new branch
+~git branch -a   # List of all branches
+~git checkout branch-name   # Switch to some branch
+
+# Branch-name
+git remote add Branch-name https://github.com/AskanHolaAE17/AppName.git
+git push -u origin Branch-name
+git push heroku Branch-name:master
+~git merge | git pull
+~git push -u origin master
+~git push heroku master
+git fetch origin   # it's "harmless" nature, you can rest assured
