@@ -1,5 +1,8 @@
-%p#notice= notice
+%p#notice
+  = notice
+  
 %h1 Checklists
+
 %table
   %thead
     %tr
@@ -9,7 +12,15 @@
   %tbody
     - @checklists.each do |checklist|
       %tr
-        %td= checklist.title
-        %td= checklist.description
+        %td
+          = link_to checklist do
+            = checklist.title
+        %td
+          = link_to checklist do
+            = checklist.description
+        %td
+          = link_to 'Destroy', checklist, method: :delete, data: { confirm: 'Are you sure?' }
+%br/
+= link_to 'New Checklist', new_checklist_path        
 
 
