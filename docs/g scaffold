@@ -1,0 +1,37 @@
+rails g scaffold Checklist title description:text
+      invoke  active_record
+      create    db/migrate/20200224095757_create_checklists.rb
+      create    app/models/checklist.rb
+      invoke    test_unit
+      create      test/models/checklist_test.rb
+      create      test/fixtures/checklists.yml
+      invoke  resource_route
+       route    resources :checklists
+      invoke  scaffold_controller
+      create    app/controllers/checklists_controller.rb
+      invoke    erb
+      create      app/views/checklists
+      create      app/views/checklists/index.html.erb
+      create      app/views/checklists/edit.html.erb
+      create      app/views/checklists/show.html.erb
+      create      app/views/checklists/new.html.erb
+      create      app/views/checklists/_form.html.erb
+      invoke    test_unit
+      create      test/controllers/checklists_controller_test.rb
+      create      test/system/checklists_test.rb
+      invoke    helper
+      create      app/helpers/checklists_helper.rb
+      invoke      test_unit
+      invoke    jbuilder
+      create      app/views/checklists/index.json.jbuilder
+      create      app/views/checklists/show.json.jbuilder
+      create      app/views/checklists/_checklist.json.jbuilder
+      invoke  assets
+      invoke    coffee
+      create      app/assets/javascripts/checklists.coffee
+      invoke    scss
+      create      app/assets/stylesheets/checklists.scss
+      invoke  scss
+      create    app/assets/stylesheets/scaffolds.scss
+
+
