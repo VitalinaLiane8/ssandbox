@@ -11,10 +11,10 @@
           
   .field
     = form.label :title
-    = form.text_field :title
+    = form.text_field :title, required: 'required'
     
   .field
     = form.label :description
-    = form.text_area :description
+    = form.text_area :description, required: 'required'
   .actions
     = form.submit
