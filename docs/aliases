@@ -1,0 +1,12 @@
+alias rs='rails s';
+alias rd='rails db:migrate';
+alias rc='rails c';
+
+alias ga='git add .';
+alias gs='git status';
+alias gc='git commit -m "';
+alias gp='git push';
+
+alias hp='git push heroku master';
+alias hr='heroku run rails db:migrate';
+;
