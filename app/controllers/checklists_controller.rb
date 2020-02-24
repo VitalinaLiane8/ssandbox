@@ -5,7 +5,7 @@ class ChecklistsController < ApplicationController
   before_action :set_checklist, only: [:show, :destroy]
 
   def index
-    @checklists = Checklist.all
+    @checklists = Checklist.page(params[:page]).per(10)
   end
   
   def show; end  

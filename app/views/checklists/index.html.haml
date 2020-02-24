@@ -20,6 +20,9 @@
             = checklist.description
         %td
           = link_to 'Destroy', checklist, method: :delete, data: { confirm: 'Are you sure?' }
+          
+=paginate @checklists
+          
 %br/
 = link_to 'New Checklist', new_checklist_path        
 
