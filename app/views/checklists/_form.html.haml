@@ -1,20 +1,21 @@
-= form_with(model: checklist, local: true) do |form|
 
-  - if checklist.errors.any?
-    #error_explanation
-      %h2
-        = pluralize(checklist.errors.count, "error")
-        prohibited this checklist from being saved:
-      %ul
-        - checklist.errors.full_messages.each do |message|
-          %li= message
-          
-  .field
-    = form.label :title
-    = form.text_field :title, required: 'required'
-    
-  .field
-    = form.label :description
-    = form.text_area :description, required: 'required'
-  .actions
-    = form.submit
+= simple_form_for(@checklist) do |f|
+  = f.error_notification
+  .form-inputs
+    = f.input :title
+    = f.input :description  
+
+  %table
+    %thead
+      %tr
+        %th Question Actions
+        %th Question Title
+        %th Question Description
+        
+    %tbody.questions
+      = f.simple_fields_for :questions do |builder|
+        = render 'question_fields', f: builder
+
+  .form-actions
+    = f.button :submit
+    = link_to_add_association 'Add Question', f, :questions, class: 'btn btn-primary', data: { association_insertion_node: '.questions', association_insertion_method: :append }

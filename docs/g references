@@ -1,0 +1,8 @@
+rails g model Question checklist:references title description:text
+
+      invoke  active_record
+      create    db/migrate/20200225092529_create_questions.rb
+      create    app/models/question.rb
+      invoke    test_unit
+      create      test/models/question_test.rb
+      create      test/fixtures/questions.yml

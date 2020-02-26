@@ -1,18 +1,27 @@
-%p#notice
-  = notice
-  
+
+%p#notice= notice
 %p
-  %strong Title:
+  %strong Checklist Title:
   = @checklist.title
 %p
-  %strong Description:
+  %strong Checklist Description:
   = @checklist.description
 
-%br/
-= link_to 'New Checklist', new_checklist_path    
 
-%br/
-= link_to 'Destroy', @checklist, method: :delete, data: { confirm: 'Are you sure?' }
+%table.table
+  %thead
+    %tr
+      %th Question Title
+      %th Description
 
-%br/
-= link_to 'To all Checklists Page', checklists_path 
+  %tbody.fields
+    - @checklist.questions.each do |question|   
+      %tr
+        %td 
+          = question.title
+
+        %td 
+          = question.description
+
+
+= link_to 'Back', checklists_path

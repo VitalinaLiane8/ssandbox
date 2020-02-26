@@ -12,13 +12,14 @@ class ChecklistsController < ApplicationController
 
   def new
     @checklist = Checklist.new
+    @checklist.questions.build
   end
   
   def create
     @checklist = Checklist.new(checklist_params)
 
     if @checklist.save
-      redirect_to @checklist, notice: 'Checklist was successfully created.' 
+      redirect_to checklists_url, notice: 'Checklist was successfully created.' 
     else
       render :new 
     end    
@@ -37,6 +38,9 @@ class ChecklistsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def checklist_params
-      params.require(:checklist).permit(:title, :description)
+      params
+        .require(:checklist)
+        .permit(:title, :description,
+          questions_attributes: Question.attribute_names.map(&:to_sym).push(:_destroy))
     end    
 end
