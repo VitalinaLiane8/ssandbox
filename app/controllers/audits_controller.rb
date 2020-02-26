@@ -4,7 +4,7 @@
 class AuditsController < ApplicationController
 
   def index
-    @audits = Audit.all
+    @audits = Audit.page(params[:page]).per(10)
   end 
   
 end  
