@@ -2,14 +2,12 @@
 
 # Controller for user sees the list of checklists
 class ChecklistsController < ApplicationController
-  before_action :set_checklist, only: [:show, :destroy]
+  before_action :set_checklist, only: [:show, :edit, :update, :destroy]
 
   def index
     @checklists = Checklist.page(params[:page]).per(10)
   end
   
-  def show; end  
-
   def new
     @checklist = Checklist.new
     @checklist.questions.build
@@ -23,7 +21,20 @@ class ChecklistsController < ApplicationController
     else
       render :new 
     end    
+  end  
+  
+  def show; end  
+  
+  def edit
   end
+  
+  def update
+    if @checklist.update(checklist_params)
+      redirect_to @checklist, notice: 'Checklist was successfully updated.'
+    else
+      render :edit 
+    end
+  end    
   
   def destroy
     @checklist.destroy

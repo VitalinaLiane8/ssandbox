@@ -1,0 +1,19 @@
+
+= simple_form_for(@checklist) do |f|
+  = f.error_notification
+  .form-inputs
+    = @checklist.title
+    = @checklist.description  
+
+  %table
+    %thead
+      %tr
+        %th Question Title
+        %th Question Description
+        
+    %tbody.questions
+
+
+  .form-actions
+    = f.button :submit
+    

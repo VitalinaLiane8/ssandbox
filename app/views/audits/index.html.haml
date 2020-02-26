@@ -22,6 +22,9 @@
           = link_to audit do
             action.updated_at
         %td
+          = link_to 'Edit', edit_audit_path(audit)
           = link_to 'Destroy', audit, method: :delete, data: { confirm: 'Are you sure?' }
 
-=paginate @audits
+= paginate @audits
+
+= render 'fill_checklist'

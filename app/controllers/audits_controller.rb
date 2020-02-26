@@ -7,8 +7,14 @@ class AuditsController < ApplicationController
 
   def index
     @audits = Audit.page(params[:page]).per(10)
+    @checklists = Checklist.all
   end 
   
+  def new
+    @checklist = Checklist.find(params[:checklist_id])
+    @audit = @checklist.build_audit
+  end
+
   def destroy
     @audit.destroy
     redirect_to audits_url, notice: 'Audit was successfully destroyed.'
