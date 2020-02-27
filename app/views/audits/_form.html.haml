@@ -1,18 +1,14 @@
 
-= simple_form_for(@checklist) do |f|
+= simple_form_for @checklist do |f|
   = f.error_notification
-  .form-inputs
-    = @checklist.title
-    = @checklist.description  
+  %h4
+    Checklist 
+    = @checklist.title 
+  %br/  
 
-  %table
-    %thead
-      %tr
-        %th Question Title
-        %th Question Description
+  = f.simple_fields_for :questions do |builder|
+    = render 'question_fields', f: builder
         
-    %tbody.questions
-
 
   .form-actions
     = f.button :submit

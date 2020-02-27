@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_02_26_181415) do
+ActiveRecord::Schema.define(version: 2020_02_27_122335) do
 
   create_table "audits", force: :cascade do |t|
     t.integer "checklist_id"
@@ -32,6 +32,8 @@ ActiveRecord::Schema.define(version: 2020_02_26_181415) do
     t.text "description"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "answer"
+    t.string "comment"
     t.index ["checklist_id"], name: "index_questions_on_checklist_id"
   end
 
