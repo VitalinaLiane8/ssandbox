@@ -2,10 +2,10 @@
 
 Rails.application.routes.draw do
   
+  resources :audits  
+  
   resources  :checklists do
     resource :audit
   end  
-  
-  resources :audits
 
 end
