@@ -1,0 +1,35 @@
+= simple_form_for @checklist, url: update_audit_fields_checklist_path(@checklist) do |f|
+  = f.error_notification
+  %h4
+    Checklist 
+    = @checklist.title 
+  %br/  
+
+  = f.simple_fields_for :questions do |builder|
+    = render 'audit_question_fields', f: builder
+        
+  .questions
+    .form-actions
+      = f.button :submit, 'Save'
+    
+    
+-#= simple_form_for @checklist, url: checklist_audit_path, method: :post do |f|
+  = f.error_notification
+  .form-inputs
+    = f.input :title
+    = f.input :description  
+
+  %table
+    %thead
+      %tr
+        %th Question Actions
+        %th Question Title
+        %th Question Description
+        
+    %tbody.questions
+      = f.simple_fields_for :questions do |builder|
+        = render 'question_fields', f: builder
+
+  .form-actions
+    = f.button :submit, 'Save'
+

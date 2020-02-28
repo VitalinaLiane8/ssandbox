@@ -1,0 +1,36 @@
+.nested-fields
+  %b
+    Question:
+  .title  
+    = f.input :title, label: false
+  %br/
+
+  %b
+    Description:
+  = f.object.description
+  %br/
+
+  = f.input :answer, as: :select, collection: [ 'yes', 'no', 'NA' ], prompt: 'Select Answer', label: false, required: 'required'
+
+  %b
+    Comment:
+  = f.input :comment, label: false, placeholder: 'Your comment', required: 'required', pattern: ".{12,}", title: "12 characters minimum"
+
+  = f.hidden_field :id
+  = f.hidden_field :_destroy  
+
+    
+  %br/
+    
+    
+-#%tr.nested-fields
+  %td
+    = link_to_remove_association "remove", f, class: 'btn btn-primary btn-xs' 
+
+  %td
+    = f.input :answer, label: false, required: 'required'
+  %td
+    = f.input :comment, label: false, required: 'required', pattern: ".{12,}", title: "12 characters minimum"
+  
+  = f.hidden_field :id
+  = f.hidden_field :_destroy    

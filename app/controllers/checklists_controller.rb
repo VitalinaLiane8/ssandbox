@@ -2,7 +2,7 @@
 
 # Controller for user sees the list of checklists
 class ChecklistsController < ApplicationController
-  before_action :set_checklist, only: [:show, :edit, :update, :destroy]
+  before_action :set_checklist, only: [:show, :edit, :update, :add_audit_fields, :update_audit_fields, :destroy]
 
   def index
     @checklists = Checklist.page(params[:page]).per(10)
@@ -35,6 +35,18 @@ class ChecklistsController < ApplicationController
       render :edit 
     end
   end    
+    
+  def add_audit_fields
+  end
+  
+  def update_audit_fields
+    title = @checklist.title
+    if @checklist.update(checklist_params) and @checklist.title = title and @checklist.save
+      redirect_to audits_path, notice: 'Audit was successfully created.' 
+    else
+      render :add_audit_fields
+    end   
+  end
   
   def destroy
     @checklist.destroy
@@ -53,5 +65,5 @@ class ChecklistsController < ApplicationController
         .require(:checklist)
         .permit(:title, :description,
           questions_attributes: Question.attribute_names.map(&:to_sym).push(:_destroy))
-    end    
+    end        
 end
