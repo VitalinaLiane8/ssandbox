@@ -1,0 +1,37 @@
+
+%p#notice= notice
+%p
+  %strong Checklist Title:
+  = @checklist.title
+%p
+  %strong Checklist Description:
+  = @checklist.description
+
+
+%table.table
+  %thead
+    %tr
+      %th Question Title
+      %th Description
+      %th Answer
+      %th Comment
+
+  %tbody.fields
+    - @checklist.questions.each do |question|   
+      %tr
+        %td 
+          = question.title
+
+        %td 
+          = question.description
+          
+        %td 
+          = question.answer
+
+        %td 
+          = question.comment          
+
+
+= link_to 'Edit', add_audit_fields_checklist_path(@checklist)
+|
+\#{link_to 'To Audits Page', audits_path}

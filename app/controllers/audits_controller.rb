@@ -3,12 +3,16 @@
 # Controller for user sees the list of audits
 class AuditsController < ApplicationController
 
-  before_action :set_audit,        only: [:destroy]
+  before_action :set_audit,        only: [:show, :destroy]
 
   def index
     @audits = Audit.page(params[:page]).per(10)
     @checklists = Checklist.all
   end 
+  
+  def show
+    @checklist = Checklist.find(@audit.checklist_id)
+  end
 
   def destroy
     @audit.destroy
