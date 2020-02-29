@@ -10,7 +10,8 @@
         
   .questions
     .form-actions
-      = f.button :submit, 'Save'
+      = f.button :submit, 'Save', class: 'btn'
+      = link_to 'Cancel Saving', audits_path, class: 'btn'
     
     
 -#= simple_form_for @checklist, url: checklist_audit_path, method: :post do |f|
@@ -32,4 +33,5 @@
 
   .form-actions
     = f.button :submit, 'Save'
+    
 
