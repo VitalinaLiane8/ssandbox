@@ -40,12 +40,8 @@ class ChecklistsController < ApplicationController
   end
   
   def update_audit_fields
-    title = @checklist.title    
-    unless @checklist.audit    
-      @checklist.build_audit 
-    else  
-      @checklist.audit.touch
-    end  
+    title = @checklist.title   
+    @checklist = ChecklistService::AuditData.call(@checklist)
     
     if @checklist.update(checklist_params) and @checklist.update(title: title)
       redirect_to audits_path, notice: 'Audit was successfully created.' 
