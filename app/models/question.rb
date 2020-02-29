@@ -6,6 +6,5 @@ class Question < ApplicationRecord
 
   validates :title,         presence: true, length: { minimum: 12, maximum: 40 }
   validates :description,   presence: true  
-  # validates :answer,        presence: true 
-  # validates :comment,       presence: true, length: { minimum: 12 }
+
 end

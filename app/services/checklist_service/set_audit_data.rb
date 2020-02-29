@@ -1,8 +1,8 @@
 # frozen_string_literal: true
 
-# Services: Module ChecklistService and its Class AuditData
+# Services: Module ChecklistService and its Class SetAuditData
 module ChecklistService
-  class AuditData < ApplicationService
+  class SetAuditData < ApplicationService
   
     def initialize(checklist)
       @checklist = checklist
