@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   resources  :checklists do
     resource :audit
     
-    get   :add_audit_fields, on: :member
+    get   :add_audit_fields,    on: :member
     patch :update_audit_fields, on: :member
   end  
 

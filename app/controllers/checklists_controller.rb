@@ -36,12 +36,18 @@ class ChecklistsController < ApplicationController
     end
   end    
     
-  def add_audit_fields
+  def add_audit_fields    
   end
   
   def update_audit_fields
-    title = @checklist.title
-    if @checklist.update(checklist_params) and @checklist.title = title and @checklist.save
+    title = @checklist.title    
+    unless @checklist.audit    
+      @checklist.build_audit 
+    else  
+      @checklist.audit.touch
+    end  
+    
+    if @checklist.update(checklist_params) and @checklist.update(title: title)
       redirect_to audits_path, notice: 'Audit was successfully created.' 
     else
       render :add_audit_fields
