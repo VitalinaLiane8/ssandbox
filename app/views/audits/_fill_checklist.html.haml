@@ -1,10 +1,10 @@
 / Button trigger modal
-%button.btn.btn-light{"data-target" => "#exampleModalLong", "data-toggle" => "modal", :type => "button"}
+%button.btn{"data-target" => "#exampleModalLong", "data-toggle" => "modal", :type => "button"}
   Fill checklist
   
 / Modal
-#exampleModalLong.modal.fade{"aria-hidden" => "true", "aria-labelledby" => "exampleModalLongTitle", :role => "dialog", :tabindex => "-1"}
-  .modal-dialog{:role => "document"}
+#exampleModalLong.modal.fade.audits-modal-form{"aria-hidden" => "true", "aria-labelledby" => "exampleModalLongTitle", role: "dialog", :tabindex => "-1"}
+  .modal-dialog{role: "document"}
     .modal-content
     
       .modal-header
@@ -15,6 +15,5 @@
           
       .modal-body
         = render 'modal_content_checklists'
-
         
 
