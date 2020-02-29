@@ -1,8 +1,16 @@
 = simple_form_for(@checklist) do |f|
   = f.error_notification
   .form-inputs
-    = f.input :title, label: false
-    = f.input :description, label: false 
+    %b
+      Enter the title:          
+    = f.input :title, label: false, placeholder: 'Title'
+    %br/
+    
+    %b
+      Description: 
+    %br/     
+    %br/
+    = f.input :description, label: false, placeholder: 'Description'	
 
   %table
     %thead
@@ -15,6 +23,8 @@
       = f.simple_fields_for :questions do |builder|
         = render 'question_fields', f: builder
 
-  .form-actions
-    = f.button :submit, class: 'btn'
+  .form-actions    
     = link_to_add_association 'Add Question', f, :questions, class: 'btn btn-primary', data: { association_insertion_node: '.questions', association_insertion_method: :append }
+    = f.button :submit, class: 'btn'
+    = link_to 'Cancel Saving', checklists_path, class: 'btn'    
+    
