@@ -1,0 +1,5 @@
+current directory: /home/vitalina/r/Sigma/ssandbox/vendor/bundle/ruby/2.6.0/gems/heroku-3.99.4
+/home/vitalina/.rvm/rubies/ruby-2.6.3/bin/ruby -I /home/vitalina/.rvm/rubies/ruby-2.6.3/lib/ruby/2.6.0 -r ./siteconf20200301-1991-rwvod5.rb extconf.rb
+extconf.rb:1:in `<main>': [31m heroku must be installed from cli.heroku.com. This gem is no longer available.[0m (RuntimeError)
+
+extconf failed, exit code 1

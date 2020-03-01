@@ -22,8 +22,8 @@
           = link_to audit do
             = audit.updated_at
         %td
-          = link_to 'Edit', edit_audit_path(audit)
-          = link_to 'Destroy', audit, method: :delete, data: { confirm: 'Are you sure?' }
+          = link_to 'Edit', add_audit_fields_checklist_path(@checklists.find(audit.checklist_id)), class: 'btn teal lighten-2'
+          = link_to 'Destroy', audit, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn red lighten-2'
 
 = paginate @audits
 
