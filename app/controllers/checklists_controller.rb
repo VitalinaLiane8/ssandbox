@@ -65,6 +65,12 @@ class ChecklistsController < ApplicationController
       params
         .require(:checklist)
         .permit(:title, :description,
-          questions_attributes: Question.attribute_names.map(&:to_sym).push(:_destroy))
+          questions_attributes: [:id, :checklist_id, :title, :description, :created_at, 
+                                 :updated_at, :answer, :comment, :skip_validation, :_destroy, 
+                        answer: [:answer, :comment, :id, :_destroy]])
+      # params
+      #   .require(:checklist)
+      #   .permit(:title, :description,
+      #     questions_attributes: Question.attribute_names.map(&:to_sym).push(:_destroy))          
     end        
 end

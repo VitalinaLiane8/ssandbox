@@ -10,17 +10,20 @@
   %br/
   %br/
 
-  %b
+  -#%b
     Enter the answer:
-  = f.input :answer, as: :select, collection: [ 'yes', 'no', 'NA' ], prompt: 'Select Answer', label: false
+  -#= f.input :answer, as: :select, collection: [ 'yes', 'no', 'NA' ], prompt: 'Select Answer', label: false
 
-  %b
+  -#%b
     Comment:
-  = f.input :comment, label: false, placeholder: 'Your comment', pattern: ".{12,}", title: "12 characters minimum", type: 'week'
+  -#= f.input :comment, label: false, placeholder: 'Your comment', pattern: ".{12,}", title: "12 characters minimum", type: 'week'
 
   = f.hidden_field :title
   = f.hidden_field :id
   = f.hidden_field :_destroy  
+  
+  = f.simple_fields_for :answers do |builder|
+    = render 'answer_fields', f: builder  
 
     
   %br/

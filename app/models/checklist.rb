@@ -4,6 +4,7 @@ class Checklist < ApplicationRecord
 
   has_many :questions, dependent: :destroy
   has_one  :audit
+  has_one  :answer, through: :questions
   
   belongs_to :user, optional: true
 

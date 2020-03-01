@@ -24,10 +24,10 @@
           = question.description
           
         %td 
-          = question.answer
+          = question.answer.answer
 
         %td 
-          = question.comment          
+          = question.answer.comment          
 
 
 = link_to 'Edit', add_audit_fields_checklist_path(@checklist)
