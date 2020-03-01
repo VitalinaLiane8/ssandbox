@@ -24,7 +24,9 @@
         = render 'question_fields', f: builder
 
   .form-actions    
-    = link_to_add_association 'Add Question', f, :questions, class: 'btn btn-primary', data: { association_insertion_node: '.questions', association_insertion_method: :append }
+    = link_to_add_association 'Add Question', f, 
+      :questions, class: 'btn btn-primary', 
+      data: { association_insertion_node: '.questions', association_insertion_method: :append }
     = f.button :submit, class: 'btn'
     = link_to 'Cancel Saving', checklists_path, class: 'btn'    
     

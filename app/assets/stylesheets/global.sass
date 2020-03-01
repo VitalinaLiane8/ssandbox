@@ -2,17 +2,37 @@ TABLE
   A
     color: #004d40 
 
+
+
+/** Form elements **/
+
 SELECT
-  display: inline
+  display: inline  
   
 TEXTAREA
   margin-top: -4px
-  border: none;
-  border-bottom: 1px solid grey;
-  overflow: visible;
+  border: none
+  border-bottom: 1px solid grey
+  overflow: visible
   
 TEXTAREA:focus  
   border-bottom: 1px solid #26a69a
   box-shadow: 0 1px 0 0 #26a69a
   
+/** INPUT **/  
+
+INPUT[type=checkbox]  
+  opacity: 1
+  position: relative
+  vertical-align: middle;
+  
+INPUT[type="checkbox"]:not(:checked)  
+  opacity: 1
+  position: relative
+  vertical-align: middle;
+  
+INPUT[type="checkbox"]:checked
+  opacity: 1
+  position: relative  
+  vertical-align: middle;
   
