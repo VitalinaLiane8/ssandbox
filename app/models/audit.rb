@@ -2,5 +2,5 @@
 
 class Audit < ApplicationRecord
   belongs_to :checklist
-  belongs_to :user
+  belongs_to :user, optional: true
 end

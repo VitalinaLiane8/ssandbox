@@ -1,5 +1,8 @@
 = simple_form_for @checklist, url: update_audit_fields_checklist_path(@checklist) do |f|
-  = f.error_notification
+
+  %p.alert.alert-danger  
+    = f.error_notification
+    
   %h4
     Checklist 
     = @checklist.title 
