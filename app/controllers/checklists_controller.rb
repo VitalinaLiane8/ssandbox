@@ -36,16 +36,18 @@ class ChecklistsController < ApplicationController
     end
   end    
     
-  def add_audit_fields    
+  def add_audit_fields
   end
   
-  def update_audit_fields
-    title = @checklist.title   
-    @checklist = ChecklistService::SetAuditData.call(@checklist)
+  def update_audit_fields 
+    @checklist = ChecklistService::SetAuditData.call(@checklist)    
     
-    if @checklist.update(checklist_params) and @checklist.update(title: title) 
+    
+    
+    if @checklist.update(checklist_params) 
       redirect_to audits_path, notice: 'Audit was successfully created.' 
     else
+      flash[:notice] = @checklist.questions[1].comment.length
       render :add_audit_fields
     end   
   end

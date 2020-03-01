@@ -6,4 +6,7 @@ class User < ApplicationRecord
          
   has_many :checklists         
   has_many :audits  
+  
+  validates :email,              length: { maximum: 50 }
+  validates :encrypted_password, length: { maximum: 50 }
 end

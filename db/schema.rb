@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_03_01_133300) do
+ActiveRecord::Schema.define(version: 2020_03_01_190723) do
 
   create_table "audits", force: :cascade do |t|
     t.integer "checklist_id"
@@ -38,6 +38,7 @@ ActiveRecord::Schema.define(version: 2020_03_01_133300) do
     t.datetime "updated_at", null: false
     t.string "answer"
     t.string "comment"
+    t.boolean "skip_validation", default: false
     t.index ["checklist_id"], name: "index_questions_on_checklist_id"
   end
 

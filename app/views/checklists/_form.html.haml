@@ -1,7 +1,9 @@
 = simple_form_for(@checklist) do |f|
 
-  %p.alert.alert-danger
-    = f.error_notification
+  - if f.error_notification
+    %p
+      .alert.alert-danger  
+        = f.error_notification
     
   .form-inputs
     %b

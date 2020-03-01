@@ -12,11 +12,11 @@
 
   %b
     Enter the answer:
-  = f.input :answer, as: :select, collection: [ 'yes', 'no', 'NA' ], prompt: 'Select Answer', label: false, required: 'required'
+  = f.input :answer, as: :select, collection: [ 'yes', 'no', 'NA' ], prompt: 'Select Answer', label: false
 
   %b
     Comment:
-  = f.input :comment, label: false, placeholder: 'Your comment', required: 'required', pattern: ".{12,}", title: "12 characters minimum"
+  = f.input :comment, label: false, placeholder: 'Your comment', pattern: ".{12,}", title: "12 characters minimum", type: 'week'
 
   = f.hidden_field :title
   = f.hidden_field :id
