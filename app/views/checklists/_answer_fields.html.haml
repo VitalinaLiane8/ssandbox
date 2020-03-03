@@ -1,7 +1,8 @@
 .k
-  = f.input :answer, as: :select, collection: [ 'yes', 'no', 'NA' ], prompt: 'Select Answer'
+  = f.input :answer, as: :select, collection: [ 'yes', 'no', 'NA' ], prompt: 'Select Answer', required: 'required'
 
-  = f.input :comment, placeholder: 'Your comment'
+  = f.input :comment, placeholder: 'Your comment', required: 'required'
+  
 
   = f.hidden_field :id
   = f.hidden_field :_destroy  

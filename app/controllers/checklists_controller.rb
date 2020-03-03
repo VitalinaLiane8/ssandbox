@@ -67,7 +67,7 @@ class ChecklistsController < ApplicationController
         .permit(:title, :description,
           questions_attributes: [:id, :checklist_id, :title, :description, :created_at, 
                                  :updated_at, :answer, :comment, :skip_validation, :_destroy, 
-                        answer: [:answer, :comment, :id, :_destroy]])
+                        answer: [:answer, :comment, :id, :question_id, :_destroy]])
       # params
       #   .require(:checklist)
       #   .permit(:title, :description,

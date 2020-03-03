@@ -1,9 +1,11 @@
 # frozen_string_literal: true
 
 class Question < ApplicationRecord
-
-  belongs_to :checklist, optional: true
-  has_one    :answer,    dependent: :destroy
+  
+  has_many    :answer,    dependent: :destroy
+  belongs_to :checklist, optional: true  
+  
+  accepts_nested_attributes_for :answer
 
   validates :title,         presence: true, length: { minimum: 12, maximum: 40 }
   validates :description,   presence: true    
