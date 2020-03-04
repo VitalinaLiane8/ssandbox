@@ -24,3 +24,13 @@
 //= require_tree .
 
 
+$( document ).ready(function() {
+
+  var authorization_pop_up_element = document.getElementById('authorization_pop_up');
+  authorization_pop_up_action = authorization_pop_up_element.textContent;
+
+  if (authorization_pop_up_action) {
+      alert(authorization_pop_up_action);
+  } 
+
+});

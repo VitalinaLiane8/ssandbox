@@ -5,7 +5,7 @@ class ChecklistsController < ApplicationController
   before_action :set_checklist, only: [:show, :edit, :update, :add_audit_fields, :update_audit_fields, :destroy]
 
   def index
-    @checklists = Checklist.page(params[:page]).per(10)
+    @checklists = Checklist.page(params[:page]).per(10)        
   end
   
   def new
@@ -63,14 +63,14 @@ class ChecklistsController < ApplicationController
     # Only allow a list of trusted parameters through.
     def checklist_params
       params
-        .require(:checklist)
-        .permit(:title, :description,
-          questions_attributes: [:id, :checklist_id, :title, :description, :created_at, 
-                                 :updated_at, :answer, :comment, :skip_validation, :_destroy, 
-                        answer: [:answer, :comment, :id, :question_id, :_destroy]])
-      # params
-      #   .require(:checklist)
-      #   .permit(:title, :description,
-      #     questions_attributes: Question.attribute_names.map(&:to_sym).push(:_destroy))          
+      #  .require(:checklist)
+      #  .permit(:title, :description,
+      #    questions_attributes: [:id, :checklist_id, :title, :description, :created_at, 
+      #                           :updated_at, :answer, :comment, :skip_validation, :_destroy, 
+      #                  answer: [:answer, :comment, :id, :question_id, :_destroy]])
+       params
+         .require(:checklist)
+         .permit(:title, :description,
+           questions_attributes: Question.attribute_names.map(&:to_sym).push(:_destroy))          
     end        
 end

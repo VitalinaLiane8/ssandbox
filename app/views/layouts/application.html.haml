@@ -13,9 +13,17 @@
           - if notice
             %p.alert.alert-success
               = notice
+            - if ['Welcome! You have signed up successfully.', 'Signed in successfully.'].include?(notice)
+              #authorization_pop_up
+                = notice  
+                
           - if alert
             %p.alert.alert-danger
               = alert 
+            - if alert == 'Invalid Email or password.'
+              #authorization_pop_up
+                = alert  
+    
               
           %p.navbar-text.float-right
           
