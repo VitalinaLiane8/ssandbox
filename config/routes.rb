@@ -8,8 +8,10 @@ Rails.application.routes.draw do
   resources  :checklists do
     resource :audit
     
-    get   :add_audit_fields,    on: :member
-    patch :update_audit_fields, on: :member
+    get :switch_publishing_status, on: :member        
+    
+    get   :add_audit_fields,       on: :member
+    patch :update_audit_fields,    on: :member    
   end  
 
   root  'checklists#index'

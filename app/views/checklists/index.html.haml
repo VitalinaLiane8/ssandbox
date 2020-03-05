@@ -16,6 +16,7 @@
           = link_to checklist do
             = checklist.description
         %td
+          = link_to checklist.next_publish_status, switch_publishing_status_checklist_path(checklist), class: 'btn teal lighten-2'
           = link_to 'Edit', edit_checklist_path(checklist), class: 'btn teal lighten-2'
           = link_to 'Destroy', checklist, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn red lighten-2'
           
